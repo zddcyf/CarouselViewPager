@@ -1,4 +1,4 @@
-package com.vp.carousel.config;
+package com.vp.carousel.viewpager.config;
 
 /**
  * Created by zdd

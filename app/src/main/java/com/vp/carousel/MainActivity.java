@@ -1,12 +1,12 @@
 package com.vp.carousel;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
-import com.vp.carousel.build.PackViewBuild;
-import com.vp.carousel.config.ViewPagerEnum;
-import com.vp.carousel.view.PackViewPager;
+import com.vp.carousel.viewpager.build.PackViewBuild;
+import com.vp.carousel.viewpager.config.ViewPagerEnum;
+import com.vp.carousel.viewpager.view.PackViewPager;
 
 import java.util.ArrayList;
 import java.util.List;

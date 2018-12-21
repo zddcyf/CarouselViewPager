@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion rootProject.ext.config.compileSdkVersion
-    buildToolsVersion '28.0.2'
+    buildToolsVersion rootProject.ext.config.buildToolsVersion
     defaultConfig {
         applicationId rootProject.ext.config["applicationId"]
         minSdkVersion rootProject.ext.config.minSdkVersion
@@ -21,6 +21,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':packviewpager')
     implementation rootProject.ext.dependencies["appcompat"]
-    implementation rootProject.ext.dependencies["glide"]
 }

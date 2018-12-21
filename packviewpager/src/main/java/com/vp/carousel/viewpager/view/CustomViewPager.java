@@ -1,4 +1,4 @@
-package com.vp.carousel.view;
+package com.vp.carousel.viewpager.view;
 
 import android.content.Context;
 import android.os.Handler;
@@ -13,8 +13,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.animation.Interpolator;
 
-import com.vp.carousel.bean.CustomPagerBean;
-import com.vp.carousel.config.ViewPagerEnum;
+import com.vp.carousel.viewpager.bean.CustomPagerBean;
+import com.vp.carousel.viewpager.config.ViewPagerEnum;
 
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;

@@ -1,4 +1,4 @@
-package carousel.vp.com.packviewpager;
+package com.vp.carousel.viewpager;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

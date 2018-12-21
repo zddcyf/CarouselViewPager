@@ -1,11 +1,11 @@
-package com.vp.carousel.adaper;
+package com.vp.carousel.viewpager.adaper;
 
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.vp.carousel.bean.CustomPagerBean;
-import com.vp.carousel.config.ViewPagerEnum;
+import com.vp.carousel.viewpager.bean.CustomPagerBean;
+import com.vp.carousel.viewpager.config.ViewPagerEnum;
 
 import java.util.List;
 

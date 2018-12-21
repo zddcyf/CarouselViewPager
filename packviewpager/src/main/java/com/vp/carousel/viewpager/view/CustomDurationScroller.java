@@ -1,4 +1,4 @@
-package com.vp.carousel.view;
+package com.vp.carousel.viewpager.view;
 
 import android.content.Context;
 import android.view.animation.Interpolator;

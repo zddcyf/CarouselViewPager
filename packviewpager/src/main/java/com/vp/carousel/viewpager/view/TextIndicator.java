@@ -1,4 +1,4 @@
-package com.vp.carousel.view;
+package com.vp.carousel.viewpager.view;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatTextView;
@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
 
-import com.vp.carousel.bean.CustomPagerBean;
+import com.vp.carousel.viewpager.bean.CustomPagerBean;
 
 /**
  * Created by zdd

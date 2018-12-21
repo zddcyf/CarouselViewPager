@@ -1,4 +1,4 @@
-package com.vp.carousel.adaper;
+package com.vp.carousel.viewpager.adaper;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -7,9 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.vp.carousel.click.IVpAllClick;
-import com.vp.carousel.click.IVpItemClick;
-import com.vp.carousel.utils.GlideUtil;
+import com.vp.carousel.viewpager.click.IVpAllClick;
+import com.vp.carousel.viewpager.click.IVpItemClick;
+import com.vp.carousel.viewpager.utils.GlideUtil;
 
 /**
  * Created by zdd

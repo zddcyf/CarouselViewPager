@@ -1,4 +1,4 @@
-package com.vp.carousel.utils;
+package com.vp.carousel.viewpager.utils;
 
 import android.content.Context;
 import android.widget.ImageView;

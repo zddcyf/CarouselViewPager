@@ -1,4 +1,4 @@
-package com.vp.carousel.view;
+package com.vp.carousel.viewpager.view;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -10,12 +10,12 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import com.vp.carousel.R;
-import com.vp.carousel.adaper.PagerDefaultAdapter;
-import com.vp.carousel.bean.CustomPagerBean;
-import com.vp.carousel.click.IVpAllClick;
-import com.vp.carousel.click.IVpStartClick;
-import com.vp.carousel.config.ViewPagerEnum;
+import com.vp.carousel.viewpager.R;
+import com.vp.carousel.viewpager.adaper.PagerDefaultAdapter;
+import com.vp.carousel.viewpager.bean.CustomPagerBean;
+import com.vp.carousel.viewpager.click.IVpAllClick;
+import com.vp.carousel.viewpager.click.IVpStartClick;
+import com.vp.carousel.viewpager.config.ViewPagerEnum;
 
 /**
  * Created by zdd

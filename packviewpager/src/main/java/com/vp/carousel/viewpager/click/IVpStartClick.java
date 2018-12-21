@@ -1,4 +1,4 @@
-package com.vp.carousel.click;
+package com.vp.carousel.viewpager.click;
 
 import android.view.View;
 

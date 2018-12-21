@@ -1,4 +1,4 @@
-package carousel.vp.com.packviewpager;
+package com.vp.carousel.viewpager;
 
 import org.junit.Test;
 

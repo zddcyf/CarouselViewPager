@@ -1,10 +1,10 @@
-package com.vp.carousel.bean;
+package com.vp.carousel.viewpager.bean;
 
 import android.support.v7.widget.AppCompatImageView;
 import android.text.TextUtils;
 
-import com.vp.carousel.click.IVpClick;
-import com.vp.carousel.config.ViewPagerEnum;
+import com.vp.carousel.viewpager.click.IVpClick;
+import com.vp.carousel.viewpager.config.ViewPagerEnum;
 
 import java.util.List;
 
