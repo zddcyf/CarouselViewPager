@@ -210,8 +210,9 @@ public class PackViewPager extends RelativeLayout implements ViewPager.OnPageCha
 
     public void update(CustomPagerBean bean) {
         if (null != textIndicator) {
-            textIndicator.setText(String.format("%s/%s", TextUtils.isEmpty(bean.getDefaultTextIndex()) ? 1 : bean.getDefaultTextIndex(), bean.getTotalSize()));
+            textIndicator.setText(String.format("%s/%s", bean.getDefaultTextIndex() == 0 ? 1 : bean.getDefaultTextIndex(), bean.getTotalSize()));
         }
         mAdapter.setDatas(bean);
+        viewPager.setMode(bean);
     }
 }

@@ -39,7 +39,7 @@ public class CustomPagerBean {
      * @return
      */
     private int totalSize;
-    private String defaultTextIndex;
+    private int defaultTextIndex;
     private int defaultTextBg = -1;
     private int defaultTextColor = -1;
     private int defaultTextSize = -1;
@@ -255,13 +255,13 @@ public class CustomPagerBean {
         this.defaultTextBg = defaultTextBg;
     }
 
-    public String getDefaultTextIndex() {
+    public int getDefaultTextIndex() {
         return defaultTextIndex;
     }
 
-    public void setDefaultTextIndex(Object defaultTextIndex) {
-        this.defaultTextIndex = String.format("%s", defaultTextIndex);
-        if (!TextUtils.isEmpty(this.defaultTextIndex)) {
+    public void setDefaultTextIndex(int defaultTextIndex) {
+        this.defaultTextIndex = defaultTextIndex;
+        if (defaultTextIndex != 0) {
             mode = ViewPagerEnum.selectBanner.getCode();
         }
     }

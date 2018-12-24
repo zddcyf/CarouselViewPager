@@ -39,7 +39,7 @@ public class TextIndicator extends AppCompatTextView {
 
     private void initView(Context context) {
         if (bean.getTotalSize() != 0) {
-            setText(String.format("%s/%s", TextUtils.isEmpty(bean.getDefaultTextIndex()) ? 1 : bean.getDefaultTextIndex(), bean.getTotalSize()));
+            setText(String.format("%s/%s", bean.getDefaultTextIndex() == 0 ? 1 : bean.getDefaultTextIndex(), bean.getTotalSize()));
         }
         setGravity(Gravity.CENTER);
         setTextSize(TypedValue.COMPLEX_UNIT_SP, bean.getDefaultTextSize() == -1 ? 12 : bean.getDefaultTextSize());

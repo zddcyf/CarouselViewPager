@@ -98,7 +98,8 @@ public class CustomViewPager extends ViewPager {
                 startAutoScroll();
             }
         } else if (bean.getMode() == ViewPagerEnum.selectBanner.getCode()) {
-            setCurrentItem(TextUtils.isEmpty(bean.getDefaultTextIndex()) ? 0 : Integer.parseInt(bean.getDefaultTextIndex()));
+//            setCurrentItem(TextUtils.isEmpty(bean.getDefaultTextIndex()) ? 0 : Integer.parseInt(bean.getDefaultTextIndex()));
+            setCurrentItem(bean.getDefaultTextIndex());
         }
     }
 

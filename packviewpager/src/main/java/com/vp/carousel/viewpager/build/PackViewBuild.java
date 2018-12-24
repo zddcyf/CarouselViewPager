@@ -194,7 +194,7 @@ public class PackViewBuild {
         return this;
     }
 
-    public PackViewBuild setDefaultTextIndex(Object defaultTextIndex) {
+    public PackViewBuild setDefaultTextIndex(int defaultTextIndex) {
         cpBean.setDefaultTextIndex(defaultTextIndex);
         return this;
     }
@@ -222,14 +222,14 @@ public class PackViewBuild {
         return this;
     }
 
-    public PackViewBuild setDefaultText(Object defaultTextIndex, int defaultTextColor, int defaultTextSize) {
-        cpBean.setDefaultTextIndex(defaultTextIndex);
-        cpBean.setDefaultTextColor(defaultTextColor);
-        cpBean.setDefaultTextSize(defaultTextSize);
-        return this;
-    }
+//    public PackViewBuild setDefaultText(int defaultTextIndex, int defaultTextColor, int defaultTextSize) {
+//        cpBean.setDefaultTextIndex(defaultTextIndex);
+//        cpBean.setDefaultTextColor(defaultTextColor);
+//        cpBean.setDefaultTextSize(defaultTextSize);
+//        return this;
+//    }
 
-    public PackViewBuild setDefaultText(Object defaultTextIndex, int defaultTextColor, int defaultTextSize, int defaultTextBg) {
+    public PackViewBuild setDefaultText(int defaultTextIndex, int defaultTextColor, int defaultTextSize, int defaultTextBg) {
         cpBean.setDefaultTextIndex(defaultTextIndex);
         cpBean.setDefaultTextColor(defaultTextColor);
         cpBean.setDefaultTextSize(defaultTextSize);
