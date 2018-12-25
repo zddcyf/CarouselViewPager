@@ -71,7 +71,7 @@ public class PagerDefaultAdapter extends BaseAdapter {
     public Object instantDatas(ViewGroup container, int position) {
         Context context = container.getContext();
         AppCompatImageView imageView = new AppCompatImageView(context);
-        Object data = bean.getDatas().get(position);
+        Object data = bean.getDatas().get(position % bean.getDatas().size());
         if (data instanceof ConfigBean) {
             Object pictures = ((ConfigBean) data).getPictures();
             if (pictures instanceof String && null != pictures && !"".equals(pictures)) {

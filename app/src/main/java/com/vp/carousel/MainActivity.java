@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setDatas();
 
         packViewBuild = new PackViewBuild<Banners>().setDefaultImage(R.mipmap.ic_launcher)
-                .setMode(ViewPagerEnum.noBanner.getCode())
+//                .setMode(ViewPagerEnum.noBanner.getCode())
+                .setMode(ViewPagerEnum.wireBanner.getCode())
                 .setScaleType(ImageView.ScaleType.FIT_XY)
                 .setPadd(5, 1, 5, 1)
                 .setMargin(10, 10, 10, 10)
