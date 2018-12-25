@@ -46,6 +46,8 @@ public abstract class BaseAdapter extends PagerAdapter {
             return getCount(bean.getIds());
         } else if (idOrImgMode == ViewPagerEnum.images.getCode()) {
             return getCount(bean.getImages());
+        } else if (idOrImgMode == ViewPagerEnum.datas.getCode()) {
+            return getCount(bean.getDatas());
         } else {
             return 1;
         }
@@ -79,6 +81,8 @@ public abstract class BaseAdapter extends PagerAdapter {
             return instantIds(container, position);
         } else if (!defaultItem && idOrImgMode == ViewPagerEnum.images.getCode()) {
             return instantImages(container, position);
+        } else if (!defaultItem && idOrImgMode == ViewPagerEnum.datas.getCode()) {
+            return instantDatas(container, position);
         } else {
             return instantDefault(container, position);
         }
@@ -87,6 +91,8 @@ public abstract class BaseAdapter extends PagerAdapter {
     public abstract Object instantIds(ViewGroup container, int position);
 
     public abstract Object instantImages(ViewGroup container, int position);
+
+    public abstract Object instantDatas(ViewGroup container, int position);
 
     public abstract Object instantDefault(ViewGroup container, int position);
 

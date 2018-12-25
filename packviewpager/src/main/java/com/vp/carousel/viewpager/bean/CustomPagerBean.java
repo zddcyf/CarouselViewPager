@@ -1,7 +1,6 @@
 package com.vp.carousel.viewpager.bean;
 
 import android.support.v7.widget.AppCompatImageView;
-import android.text.TextUtils;
 
 import com.vp.carousel.viewpager.click.IVpClick;
 import com.vp.carousel.viewpager.config.ViewPagerEnum;
@@ -14,7 +13,7 @@ import java.util.List;
  * at 14:30
  * summary:
  */
-public class CustomPagerBean {
+public class CustomPagerBean<T extends ConfigBean> {
     /**
      * 轮播时间
      */
@@ -26,7 +25,7 @@ public class CustomPagerBean {
     private List<Integer> ids; // 传递的是本地的id串
     private List<String> images; // 传递的是一串网址
     private String imageName; // 如果是把数据源扔进来需要把具体获取图片路径的方法名传递进来(不推荐使用，因为涉及到反射。影响性能)
-    private List<Object> datas; // 可以扔一个数据源进来
+    private List<T> datas; // 可以扔一个数据源进来
     private int defaultImage = -1; // 默认图
     private AppCompatImageView.ScaleType scaleType = null;
 
@@ -94,9 +93,6 @@ public class CustomPagerBean {
     }
 
     public void setIds(List<Integer> ids) {
-//        if (null != this.ids) {
-//            this.ids.clear();
-//        }
         if (null != this.images) {
             this.images.clear();
         }
@@ -118,9 +114,6 @@ public class CustomPagerBean {
         if (null != this.ids) {
             this.ids.clear();
         }
-//        if (null != this.images) {
-//            this.images.clear();
-//        }
         if (null != this.datas) {
             this.datas.clear();
         }
@@ -139,11 +132,21 @@ public class CustomPagerBean {
         this.imageName = imageName;
     }
 
-    public List<Object> getDatas() {
+    public List<T> getDatas() {
         return datas;
     }
 
-    public void setDatas(List<Object> datas) {
+    public void setDatas(List<T> datas) {
+        if (null != this.ids) {
+            this.ids.clear();
+        }
+        if (null != this.images) {
+            this.images.clear();
+        }
+        if (null != datas) {
+            idOrImgMode = ViewPagerEnum.datas.getCode();
+            totalSize = datas.size();
+        }
         this.datas = datas;
     }
 

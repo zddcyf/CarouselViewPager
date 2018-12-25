@@ -9,6 +9,7 @@ package com.vp.carousel.viewpager.config;
 public enum ViewPagerEnum {
     ids(0), // 使用路径
     images(1), // 使用网络路径
+    datas(18), // 使用数据源
 
     point(2), // 显示点
     number(3), // 显示数字

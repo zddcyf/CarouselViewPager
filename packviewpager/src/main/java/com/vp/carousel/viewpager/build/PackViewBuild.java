@@ -2,6 +2,7 @@ package com.vp.carousel.viewpager.build;
 
 import android.support.v7.widget.AppCompatImageView;
 
+import com.vp.carousel.viewpager.bean.ConfigBean;
 import com.vp.carousel.viewpager.bean.CustomPagerBean;
 import com.vp.carousel.viewpager.click.IVpClick;
 import com.vp.carousel.viewpager.view.PackViewPager;
@@ -15,8 +16,8 @@ import java.util.List;
  * at 14:30
  * summary:
  */
-public class PackViewBuild {
-    private CustomPagerBean cpBean = new CustomPagerBean();
+public class PackViewBuild<T extends ConfigBean> {
+    private CustomPagerBean cpBean = new CustomPagerBean<T>();
     private PackViewPager view;
 
     public PackViewBuild setInterval(int interval) {
@@ -118,7 +119,7 @@ public class PackViewBuild {
      * @param datas
      * @return
      */
-    public PackViewBuild setDatas(List<Object> datas) {
+    public PackViewBuild setDatas(List<T> datas) {
         cpBean.setDatas(datas);
         return this;
     }

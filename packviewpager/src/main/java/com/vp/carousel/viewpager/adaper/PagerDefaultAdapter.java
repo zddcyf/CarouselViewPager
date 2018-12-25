@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.vp.carousel.viewpager.bean.ConfigBean;
 import com.vp.carousel.viewpager.click.IVpAllClick;
 import com.vp.carousel.viewpager.click.IVpItemClick;
 import com.vp.carousel.viewpager.utils.GlideUtil;
@@ -38,7 +39,7 @@ public class PagerDefaultAdapter extends BaseAdapter {
             holder = (PagerHolder) holder.imageView.getTag();
         }
         if (null != bean) {
-            int integer = bean.getIds().get(position % bean.getIds().size());
+            int integer = (int) bean.getIds().get(position % bean.getIds().size());
             setImageBg(context, holder.imageView, integer);
             setImageAttr(holder.imageView);
             setClick(holder.imageView, position);
@@ -58,8 +59,30 @@ public class PagerDefaultAdapter extends BaseAdapter {
     public Object instantImages(ViewGroup container, int position) {
         Context context = container.getContext();
         AppCompatImageView imageView = new AppCompatImageView(context);
-        String url = bean.getImages().get(position % bean.getImages().size());
+        String url = (String) bean.getImages().get(position % bean.getImages().size());
         GlideUtil.load(context, bean.getImageHeadUrl() + url, imageView, bean.getDefaultImage());
+        setImageAttr(imageView);
+        setClick(imageView, position);
+        container.addView(imageView);
+        return imageView;
+    }
+
+    @Override
+    public Object instantDatas(ViewGroup container, int position) {
+        Context context = container.getContext();
+        AppCompatImageView imageView = new AppCompatImageView(context);
+        Object data = bean.getDatas().get(position);
+        if (data instanceof ConfigBean) {
+            Object pictures = ((ConfigBean) data).getPictures();
+            if (pictures instanceof String && null != pictures && !"".equals(pictures)) {
+                GlideUtil.load(context, bean.getImageHeadUrl() + pictures, imageView, bean.getDefaultImage());
+            } else if (pictures instanceof Integer) {
+                setImageBg(context, imageView, (Integer) pictures);
+            } else {
+                setImageBg(context, imageView, -1);
+            }
+        }
+        imageView.setTag(data);
         setImageAttr(imageView);
         setClick(imageView, position);
         container.addView(imageView);
