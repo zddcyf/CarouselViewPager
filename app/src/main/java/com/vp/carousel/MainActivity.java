@@ -5,11 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.vp.carousel.bean.Banners;
 import com.vp.carousel.viewpager.build.PackViewBuild;
 import com.vp.carousel.viewpager.click.IVpItemClick;
 import com.vp.carousel.viewpager.config.ViewPagerEnum;
+import com.vp.carousel.viewpager.pager.IVpPagerSelect;
 import com.vp.carousel.viewpager.view.PackViewPager;
 
 import java.util.ArrayList;
@@ -37,6 +39,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setGrivate(ViewPagerEnum.bottomOrRight.getCode())
                 .setBookMarkMode(ViewPagerEnum.number.getCode())
                 .setDatas(list)
+//                .addOnPageChangeListener(new IVpPagerSelect() {
+//                    @Override
+//                    public void onPageSelected(int position) {
+//                        Toast.makeText(MainActivity.this, position + "个", Toast.LENGTH_LONG).show();
+//                    }
+//                })
                 .setiVpClick(new IVpItemClick() {
                     @Override
                     public void itemClick(View v, int position) {

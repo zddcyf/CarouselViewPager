@@ -4,6 +4,7 @@ import android.support.v7.widget.AppCompatImageView;
 
 import com.vp.carousel.viewpager.click.IVpClick;
 import com.vp.carousel.viewpager.config.ViewPagerEnum;
+import com.vp.carousel.viewpager.pager.IVpPager;
 
 import java.util.List;
 
@@ -51,6 +52,7 @@ public class CustomPagerBean<T extends ConfigBean> {
     private int startBtnPaddLeft, startBtnPaddTop, startBtnPaddRight, startBtnPaddBottom;
 
     private IVpClick iVpClick;
+    private IVpPager iVpPager;
 
     private int child = -1;
     private List<Integer> childs;
@@ -367,6 +369,14 @@ public class CustomPagerBean<T extends ConfigBean> {
 
     public void setiVpClick(IVpClick iVpClick) {
         this.iVpClick = iVpClick;
+    }
+
+    public IVpPager getiVpPager() {
+        return iVpPager;
+    }
+
+    public void setiVpPager(IVpPager iVpPager) {
+        this.iVpPager = iVpPager;
     }
 
     public int getChild() {

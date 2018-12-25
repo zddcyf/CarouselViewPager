@@ -16,6 +16,8 @@ import com.vp.carousel.viewpager.bean.CustomPagerBean;
 import com.vp.carousel.viewpager.click.IVpAllClick;
 import com.vp.carousel.viewpager.click.IVpStartClick;
 import com.vp.carousel.viewpager.config.ViewPagerEnum;
+import com.vp.carousel.viewpager.pager.IVpPagerAll;
+import com.vp.carousel.viewpager.pager.IVpPagerSelect;
 
 /**
  * Created by zdd
@@ -178,7 +180,9 @@ public class PackViewPager extends RelativeLayout implements ViewPager.OnPageCha
 
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
+        if (null != bean.getiVpPager() && bean.getiVpPager() instanceof IVpPagerAll) {
+            ((IVpPagerAll) bean.getiVpPager()).onPageScrolled(position, positionOffset, positionOffsetPixels);
+        }
     }
 
     @Override
@@ -201,11 +205,18 @@ public class PackViewPager extends RelativeLayout implements ViewPager.OnPageCha
             if (null != startBtn)
                 startBtn.setVisibility(GONE);
         }
+        if (null != bean.getiVpPager() && bean.getiVpPager() instanceof IVpPagerAll) {
+            ((IVpPagerAll) bean.getiVpPager()).onPageSelected(position);
+        } else if (null != bean.getiVpPager() && bean.getiVpPager() instanceof IVpPagerSelect) {
+            ((IVpPagerSelect) bean.getiVpPager()).onPageSelected(position);
+        }
     }
 
     @Override
     public void onPageScrollStateChanged(int state) {
-
+        if (null != bean.getiVpPager() && bean.getiVpPager() instanceof IVpPagerAll) {
+            ((IVpPagerAll) bean.getiVpPager()).onPageScrollStateChanged(state);
+        }
     }
 
     public void update(CustomPagerBean bean) {

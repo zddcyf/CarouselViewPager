@@ -5,6 +5,7 @@ import android.support.v7.widget.AppCompatImageView;
 import com.vp.carousel.viewpager.bean.ConfigBean;
 import com.vp.carousel.viewpager.bean.CustomPagerBean;
 import com.vp.carousel.viewpager.click.IVpClick;
+import com.vp.carousel.viewpager.pager.IVpPager;
 import com.vp.carousel.viewpager.view.PackViewPager;
 
 import java.util.Arrays;
@@ -313,6 +314,11 @@ public class PackViewBuild<T extends ConfigBean> {
 
     public PackViewBuild setiVpClick(IVpClick iVpClick) {
         cpBean.setiVpClick(iVpClick);
+        return this;
+    }
+
+    public PackViewBuild addOnPageChangeListener(IVpPager iVpPager) {
+        cpBean.setiVpPager(iVpPager);
         return this;
     }
 
