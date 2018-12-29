@@ -6,6 +6,7 @@ import android.support.v7.widget.AppCompatImageView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.vp.carousel.viewpager.bean.ConfigBean;
 import com.vp.carousel.viewpager.click.IVpAllClick;
@@ -70,7 +71,10 @@ public class PagerDefaultAdapter extends BaseAdapter {
     @Override
     public Object instantDatas(ViewGroup container, int position) {
         Context context = container.getContext();
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
         AppCompatImageView imageView = new AppCompatImageView(context);
+        imageView.setLayoutParams(new LinearLayout.LayoutParams(-1, -1));
         Object data = bean.getDatas().get(position % bean.getDatas().size());
         if (data instanceof ConfigBean) {
             Object pictures = ((ConfigBean) data).getPictures();
@@ -82,11 +86,12 @@ public class PagerDefaultAdapter extends BaseAdapter {
                 setImageBg(context, imageView, -1);
             }
         }
-        imageView.setTag(data);
+        linearLayout.setTag(data);
         setImageAttr(imageView);
-        setClick(imageView, position);
-        container.addView(imageView);
-        return imageView;
+        setClick(linearLayout, position);
+        linearLayout.addView(imageView);
+        container.addView(linearLayout);
+        return linearLayout;
     }
 
     /**
@@ -107,7 +112,7 @@ public class PagerDefaultAdapter extends BaseAdapter {
         return imageView;
     }
 
-    private void setClick(AppCompatImageView imageView, final int position) {
+    private void setClick(View imageView, final int position) {
         if (null != bean.getiVpClick()) {
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
