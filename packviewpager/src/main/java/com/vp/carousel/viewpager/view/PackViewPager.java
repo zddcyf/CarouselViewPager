@@ -181,7 +181,7 @@ public class PackViewPager extends RelativeLayout implements ViewPager.OnPageCha
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
         if (null != bean.getiVpPager() && bean.getiVpPager() instanceof IVpPagerAll) {
-            ((IVpPagerAll) bean.getiVpPager()).onPageScrolled(position, positionOffset, positionOffsetPixels);
+            ((IVpPagerAll) bean.getiVpPager()).onPageScrolled(position % bean.getTotalSize(), positionOffset, positionOffsetPixels);
         }
     }
 
@@ -206,9 +206,9 @@ public class PackViewPager extends RelativeLayout implements ViewPager.OnPageCha
                 startBtn.setVisibility(GONE);
         }
         if (null != bean.getiVpPager() && bean.getiVpPager() instanceof IVpPagerAll) {
-            ((IVpPagerAll) bean.getiVpPager()).onPageSelected(position);
+            ((IVpPagerAll) bean.getiVpPager()).onPageSelected(position % bean.getTotalSize());
         } else if (null != bean.getiVpPager() && bean.getiVpPager() instanceof IVpPagerSelect) {
-            ((IVpPagerSelect) bean.getiVpPager()).onPageSelected(position);
+            ((IVpPagerSelect) bean.getiVpPager()).onPageSelected(position % bean.getTotalSize());
         }
     }
 
